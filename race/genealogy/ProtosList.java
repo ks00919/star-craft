@@ -1,5 +1,6 @@
 package race.genealogy;
 
+import race.Carrier;
 import race.Corsair;
 import race.Dragoon;
 import race.HighTempler;
@@ -36,6 +37,12 @@ public enum ProtosList {
         @Override
         public Corsair getProtos() {
             return new Corsair();
+        }
+    },
+    CARRIER {
+        @Override
+        public Carrier getProtos() {
+            return new Carrier();
         }
     };
 

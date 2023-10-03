@@ -1,5 +1,6 @@
 package race.genealogy;
 
+import race.BattleCruzer;
 import race.Goliath;
 import race.Marine;
 import race.Tank;
@@ -36,6 +37,12 @@ public enum TerranList {
         @Override
         public Valkyrie getTerran() {
             return new Valkyrie();
+        }
+    },
+    BATTELCRUZER {
+        @Override
+        public BattleCruzer getTerran() {
+            return new BattleCruzer();
         }
     };
 

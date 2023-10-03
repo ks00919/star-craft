@@ -3,6 +3,7 @@ package race.genealogy;
 import race.Guardian;
 import race.Hydralisk;
 import race.Mutalisk;
+import race.Queen;
 import race.Ultralisk;
 import race.Zerg;
 import race.Zergling;
@@ -36,6 +37,12 @@ public enum ZergList {
         @Override
         public Guardian getZerg() {
             return new Guardian();
+        }
+    },
+    QUEEN {
+        @Override
+        public Queen getZerg() {
+            return new Queen();
         }
     };
 
