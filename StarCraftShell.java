@@ -76,7 +76,7 @@ public class StarCraftShell {
             int number = getInputNumber("입력 : ");
             try {
                 setPlayer(number);
-                setComputer(number);
+                setComputer();
                 break;
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
@@ -101,14 +101,8 @@ public class StarCraftShell {
         }
     }
 
-    private void setComputer(int user) {
-        int computer;
-
-        do {
-            computer = (int) (Math.random() * 3);
-        } while (computer == user);
-
-        switch (computer) {
+    private void setComputer() {
+        switch ((int) (Math.random() * 3)) {
             case 0:
                 this.computer = new TerranPlayer();
                 break;
