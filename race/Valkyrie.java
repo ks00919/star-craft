@@ -1,18 +1,13 @@
 package race;
 
-public class Valkyrie extends Terran {
+public class Valkyrie extends Terran implements Flyable {
 
     public Valkyrie() {
         super(4, 12);
     }
 
     @Override
-    public boolean canFly() {
-        return true;
-    }
-
-    @Override
-    public boolean canAttack(Flyable race) {
+    boolean canAttack(Race race) {
         return true;
     }
 }

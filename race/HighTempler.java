@@ -7,12 +7,7 @@ public class HighTempler extends Protos {
     }
 
     @Override
-    public boolean canFly() {
-        return false;
-    }
-
-    @Override
-    public boolean canAttack(Flyable race) {
-        return !race.canFly();
+    boolean canAttack(Race race) {
+        return !(race instanceof Flyable);
     }
 }

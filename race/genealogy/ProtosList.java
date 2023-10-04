@@ -46,6 +46,5 @@ public enum ProtosList {
         }
     };
 
-
     public abstract Protos getProtos();
 }

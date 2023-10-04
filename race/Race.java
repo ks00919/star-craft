@@ -1,10 +1,32 @@
 package race;
 
-public interface Race extends Flyable {
+public abstract class Race {
 
-    void attack(Race race);
+    private final int strikingPower;
+    private int defensivePower;
 
-    void defence(int strikingPower);
+    protected Race(int strikingPower, int defensivePower) {
+        this.strikingPower = strikingPower;
+        this.defensivePower = defensivePower;
+    }
 
-    boolean canAttack(Flyable race);
+    public void attack(Race race) {
+        if (!this.canAttack(race)) {
+            throw new IllegalArgumentException("공격할 수 없는 유닛입니다.");
+        }
+        race.defence(this.strikingPower);
+    }
+
+    public void defence(int strikingPower) {
+        this.defensivePower -= strikingPower;
+        if (this.defensivePower <= 0) {
+            throw new ArithmeticException(this.getClass().getSimpleName() + " 의 방어력이 0 입니다.");
+        }
+    }
+
+    abstract boolean canAttack(Race race);
+
+    public String status() {
+        return this.getClass().getSimpleName() + " (현재 방어력: " + this.defensivePower + (")");
+    }
 }

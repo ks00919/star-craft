@@ -1,18 +1,13 @@
 package race;
 
-public class Mutalisk extends Zerg {
+public class Mutalisk extends Zerg implements Flyable {
     public Mutalisk() {
         super(2, 8);
     }
 
 
     @Override
-    public boolean canFly() {
-        return true;
-    }
-
-    @Override
-    public boolean canAttack(Flyable race) {
+    boolean canAttack(Race race) {
         return true;
     }
 }

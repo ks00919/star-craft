@@ -1,18 +1,13 @@
 package race;
 
-public class Goliath extends Terran {
-
+public class Goliath extends Terran implements Shootable {
     public Goliath() {
         super(5, 15);
     }
 
-    @Override
-    public boolean canFly() {
-        return false;
-    }
 
     @Override
-    public boolean canAttack(Flyable race) {
+    boolean canAttack(Race race) {
         return true;
     }
 }

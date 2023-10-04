@@ -1,18 +1,14 @@
 package race;
 
-public class Hydralisk extends Zerg {
+public class Hydralisk extends Zerg implements Shootable {
 
     public Hydralisk() {
         super(3, 7);
     }
 
-    @Override
-    public boolean canFly() {
-        return false;
-    }
 
     @Override
-    public boolean canAttack(Flyable race) {
+    boolean canAttack(Race race) {
         return true;
     }
 }

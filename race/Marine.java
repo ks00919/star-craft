@@ -6,15 +6,8 @@ public class Marine extends Terran {
         super(3, 10);
     }
 
-
     @Override
-    public boolean canFly() {
-        return false;
+    boolean canAttack(Race race) {
+        return !(race instanceof Flyable);
     }
-
-    @Override
-    public boolean canAttack(Flyable race) {
-        return !race.canFly();
-    }
-
 }

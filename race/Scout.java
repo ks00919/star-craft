@@ -1,18 +1,13 @@
 package race;
 
-public class Scout extends Protos {
+public class Scout extends Protos implements Flyable {
 
     public Scout() {
         super(5, 10);
     }
 
     @Override
-    public boolean canFly() {
-        return true;
-    }
-
-    @Override
-    public boolean canAttack(Flyable race) {
+    boolean canAttack(Race race) {
         return true;
     }
 }

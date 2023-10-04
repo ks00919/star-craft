@@ -1,18 +1,13 @@
 package race;
 
-public class Wraith extends Terran {
+public class Wraith extends Terran implements Flyable {
 
     public Wraith() {
         super(3, 10);
     }
 
     @Override
-    public boolean canFly() {
-        return true;
-    }
-
-    @Override
-    public boolean canAttack(Flyable race) {
+    boolean canAttack(Race race) {
         return true;
     }
 }

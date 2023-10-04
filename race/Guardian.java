@@ -1,17 +1,12 @@
 package race;
 
-public class Guardian extends Zerg {
+public class Guardian extends Zerg implements Flyable {
     public Guardian() {
         super(3, 6);
     }
 
     @Override
-    public boolean canFly() {
-        return true;
-    }
-
-    @Override
-    public boolean canAttack(Flyable race) {
+    boolean canAttack(Race race) {
         return true;
     }
 }

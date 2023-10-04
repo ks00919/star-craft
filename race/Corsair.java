@@ -1,18 +1,12 @@
 package race;
 
-public class Corsair extends Protos {
+public class Corsair extends Protos implements Flyable {
     public Corsair() {
         super(4, 12);
     }
 
-
     @Override
-    public boolean canFly() {
-        return true;
-    }
-
-    @Override
-    public boolean canAttack(Flyable race) {
+    boolean canAttack(Race race) {
         return true;
     }
 }

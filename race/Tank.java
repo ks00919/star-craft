@@ -6,13 +6,9 @@ public class Tank extends Terran {
         super(7, 15);
     }
 
-    @Override
-    public boolean canFly() {
-        return false;
-    }
 
     @Override
-    public boolean canAttack(Flyable race) {
-        return !race.canFly();
+    boolean canAttack(Race race) {
+        return !(race instanceof Flyable);
     }
 }
